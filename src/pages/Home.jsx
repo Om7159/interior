@@ -85,7 +85,7 @@ export default function Home() {
               <span className="text-[#C9A55A]">Meets Modern Living</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light">
-              We craft sophisticated interiors that reflect your unique story and elevate everyday moments
+              We craft interiors that reflect your story and elevate your everyday moments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to={createPageUrl("Projects")}>
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <div key={project.id}>
                 <Link to={createPageUrl("ProjectDetail") + `?id=${project.id}`}>
                   <div className="group cursor-pointer">
@@ -163,11 +163,17 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div key={service.id}>
                 <Link to={createPageUrl("ServiceDetail") + `?id=${service.id}`}>
                   <div className="group bg-[#FAFAF8] p-8 rounded-lg hover:shadow-xl transition-all duration-300">
-                    <div className="w-16 h-16 bg-[#C9A55A]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#C9A55A] transition-colors" />
+                    <div
+                      className="w-16 h-16 bg-[#C9A55A]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#C9A55A] transition-colors"
+                      aria-hidden="true"
+                    >
+                      {/* Placeholder for service icon */}
+                      <Quote className="w-6 h-6 text-[#C9A55A]" />
+                    </div>
                     <h3 className="text-2xl font-semibold text-[#2C2C2C] mb-4 group-hover:text-[#C9A55A] transition-colors" style={{fontFamily: "'Cormorant Garamond', serif"}}>
                       {service.title}
                     </h3>
@@ -231,5 +237,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }
