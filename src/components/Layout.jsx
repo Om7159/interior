@@ -3,10 +3,16 @@ import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 export default function Layout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [location.pathname]);
 
   const navigation = [
     { name: "Home", path: createPageUrl("Home") },
@@ -20,7 +26,7 @@ export default function Layout({ children }) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAFAF8]">
+  <div className="min-h-screen bg-[var(--bg)]" style={{scrollBehavior: 'smooth'}}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
@@ -33,10 +39,13 @@ export default function Layout({ children }) {
         }
       `}</style>
 
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAFAF8]/95 backdrop-blur-md border-b border-gray-200/50">
+  <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg)] backdrop-blur-md shadow-sm border-b border-gray-200/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <Link to={createPageUrl("Home")} className="text-3xl font-bold text-[#2C2C2C]" style={{fontFamily: "'Cormorant Garamond', serif"}}>
+            <Link to={createPageUrl("Home")} className="text-3xl font-bold text-[var(--dark)] flex items-center gap-3" style={{fontFamily: "'Cormorant Garamond', serif"}}>
+              <span className="w-10 h-10 rounded-full bg-[var(--primary)]/10 flex items-center justify-center soft-border float-slow">
+                <span className="text-[var(--primary)] text-lg font-semibold">I</span>
+              </span>
               Interio
             </Link>
 
@@ -45,10 +54,10 @@ export default function Layout({ children }) {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-sm font-medium transition-colors nav-link ${
                     location.pathname === item.path
-                      ? "text-[#C9A55A]"
-                      : "text-[#333333] hover:text-[#C9A55A]"
+                      ? "text-[var(--primary)] active"
+                      : "text-[var(--dark)] hover:text-[var(--primary)]"
                   }`}
                 >
                   {item.name}
@@ -61,7 +70,8 @@ export default function Layout({ children }) {
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2"
+              aria-label="Toggle menu"
+              className="lg:hidden p-3 rounded-md hover:bg-[rgba(44,44,44,0.02)]"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -69,21 +79,28 @@ export default function Layout({ children }) {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-gray-200/50 bg-[#FAFAF8]">
-            <nav className="px-4 py-6 space-y-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block text-base font-medium ${
-                    location.pathname === item.path ? "text-[#C9A55A]" : "text-[#333333]"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
+          <div className="lg:hidden fixed inset-0 z-40 bg-[rgba(12,12,12,0.6)] backdrop-blur-sm">
+            <div className="absolute inset-0 flex items-start justify-center pt-28 px-6">
+              <nav className="w-full max-w-md bg-[var(--bg)] rounded-2xl p-6 glass-card shadow-xl">
+                <div className="flex flex-col gap-4">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block text-lg font-medium py-3 px-2 rounded-md ${
+                        location.pathname === item.path ? "text-[var(--primary)] bg-[rgba(201,165,90,0.06)]" : "text-[var(--dark)] hover:text-[var(--primary)]"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="pt-4">
+                    <Button className="w-full bg-[var(--primary)] text-white">Get Started</Button>
+                  </div>
+                </div>
+              </nav>
+            </div>
           </div>
         )}
       </header>
@@ -140,7 +157,7 @@ export default function Layout({ children }) {
             </div>
           </div>
 
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-sm text-gray-400">
+          <div className="border-t border-gray-700/30 mt-12 pt-8 text-center text-sm text-gray-400">
             <p>© 2024 Interio. All rights reserved.</p>
           </div>
         </div>

@@ -2,16 +2,16 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
-
-// Placeholder components for navigation links
-const About = () => <div className="min-h-screen pt-20 px-4 text-center"><h1 className="text-4xl font-bold text-[#2C2C2C] mt-20">About Us</h1><p className="text-gray-600 mt-4">Coming Soon...</p></div>
-const Services = () => <div className="min-h-screen pt-20 px-4 text-center"><h1 className="text-4xl font-bold text-[#2C2C2C] mt-20">Our Services</h1><p className="text-gray-600 mt-4">Coming Soon...</p></div>
-const Projects = () => <div className="min-h-screen pt-20 px-4 text-center"><h1 className="text-4xl font-bold text-[#2C2C2C] mt-20">Our Projects</h1><p className="text-gray-600 mt-4">Coming Soon...</p></div>
-const Team = () => <div className="min-h-screen pt-20 px-4 text-center"><h1 className="text-4xl font-bold text-[#2C2C2C] mt-20">Our Team</h1><p className="text-gray-600 mt-4">Coming Soon...</p></div>
-const Pricing = () => <div className="min-h-screen pt-20 px-4 text-center"><h1 className="text-4xl font-bold text-[#2C2C2C] mt-20">Pricing</h1><p className="text-gray-600 mt-4">Coming Soon...</p></div>
-const Blog = () => <div className="min-h-screen pt-20 px-4 text-center"><h1 className="text-4xl font-bold text-[#2C2C2C] mt-20">Blog</h1><p className="text-gray-600 mt-4">Coming Soon...</p></div>
-const Contact = () => <div className="min-h-screen pt-20 px-4 text-center"><h1 className="text-4xl font-bold text-[#2C2C2C] mt-20">Contact Us</h1><p className="text-gray-600 mt-4">Coming Soon...</p></div>
-
+import About from './pages/About'
+import Services from './pages/Services'
+import Projects from './pages/Projects'
+import Team from './pages/Team'
+import Blog from './pages/Blog'
+import Contact from './pages/Contact'
+import ProjectDetail from './pages/ProjectDetail'
+import ServiceDetail from './pages/ServiceDetail'
+import Pricing from './pages/Pricing'
+import NotFound from './pages/NotFound'
 function App() {
   return (
     <Layout>
@@ -20,10 +20,13 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projectdetail" element={<ProjectDetail />} />
+        <Route path="/servicedetail" element={<ServiceDetail />} />
         <Route path="/team" element={<Team />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
   )

@@ -93,6 +93,27 @@ export default function Projects() {
               </motion.div>
             ))}
           </div>
+
+          <div className="mt-12">
+            <h2 className="text-3xl font-semibold mb-4" style={{fontFamily: "'Cormorant Garamond', serif"}}>Featured Transformations</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="glass-card p-4 rounded-xl project-elevate">
+                <img src="https://images.unsplash.com/photo-1549187774-b4e9eda3a2c5?w=800" alt="project" className="w-full h-40 object-cover rounded-md mb-4" />
+                <h4 className="font-semibold">Refined Apartment</h4>
+                <p className="text-[var(--muted)] text-sm">A transformation focused on light, proportion and materiality.</p>
+              </div>
+              <div className="glass-card p-4 rounded-xl project-elevate">
+                <img src="https://images.unsplash.com/photo-1505691723518-41cbfd9f92e1?w=800" alt="project" className="w-full h-40 object-cover rounded-md mb-4" />
+                <h4 className="font-semibold">Boutique Hotel Suite</h4>
+                <p className="text-[var(--muted)] text-sm">Hospitality design that balances warmth and refinement.</p>
+              </div>
+              <div className="glass-card p-4 rounded-xl project-elevate">
+                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800" alt="project" className="w-full h-40 object-cover rounded-md mb-4" />
+                <h4 className="font-semibold">Family Residence</h4>
+                <p className="text-[var(--muted)] text-sm">Functional planning with carefully considered finishes.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

@@ -89,6 +89,21 @@ export default function Team() {
               </motion.div>
             ))}
           </div>
+
+          <div className="mt-16 bg-white p-12 rounded-2xl glass-card">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-3xl font-bold mb-4" style={{fontFamily: "'Cormorant Garamond', serif"}}>Behind the Scenes</h3>
+                <p className="text-[var(--muted)]">Our multidisciplinary studio brings together designers, architects and makers to craft every detail from concept through completion. Collaboration and craft are at the heart of each project.</p>
+                <div className="mt-6">
+                  <a href="#" className="text-[var(--primary)] font-semibold">Meet the team →</a>
+                </div>
+              </div>
+              <div>
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1000" alt="studio" className="rounded-lg shadow-lg" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
