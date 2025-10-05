@@ -179,6 +179,34 @@ ${formData.message}
               </div>
             </div>
           </div>
+
+          <div className="mt-12">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-3xl font-bold mb-4" style={{fontFamily: "'Cormorant Garamond', serif"}}>Our Studio</h3>
+                  <p className="text-[var(--muted)]">A curated workshop and studio where ideas are prototyped and finishes are sampled. We welcome visitors by appointment.</p>
+                </div>
+                <div>
+                  <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1000" alt="studio" className="rounded-lg shadow-lg" />
+                </div>
+              </div>
+
+              <div className="mt-10 bg-white p-8 rounded-2xl glass-card">
+                <h4 className="text-xl font-semibold mb-4">FAQ</h4>
+                <div className="space-y-4 text-[var(--muted)]">
+                  <div>
+                    <strong>How long does a typical project take?</strong>
+                    <p>Timelines vary — small interiors can take 6-12 weeks; full-service projects are typically 6-12 months.</p>
+                  </div>
+                  <div>
+                    <strong>Do you work remotely?</strong>
+                    <p>Yes. We offer remote consulting and can manage procurement and installations nationwide.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

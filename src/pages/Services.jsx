@@ -84,6 +84,24 @@ export default function Services() {
               </motion.div>
             ))}
           </div>
+
+          <div className="mt-16 bg-white p-12 rounded-2xl glass-card">
+            <h3 className="text-3xl font-bold mb-6" style={{fontFamily: "'Cormorant Garamond', serif"}}>Our Process</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold mb-2">Discover</h4>
+                <p className="text-[var(--muted)]">We begin by understanding your lifestyle and the project's goals — site visits, briefings and concept direction.</p>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold mb-2">Design</h4>
+                <p className="text-[var(--muted)]">Concepts are developed into detailed plans, material palettes, and 3D visualizations to align expectations.</p>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold mb-2">Deliver</h4>
+                <p className="text-[var(--muted)]">We manage procurement and installation with rigorous quality control for a seamless handover.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

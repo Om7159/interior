@@ -74,28 +74,34 @@ export default function Home() {
   return (
     <div className="bg-[#FAFAF8]">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2C2C2C] via-[#3a3a3a] to-[#2C2C2C] opacity-95" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200')] bg-cover bg-center mix-blend-overlay opacity-20" />
+  <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--dark)] via-[#3a3a3a] to-[var(--dark)] opacity-96" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200')] bg-cover bg-center mix-blend-overlay opacity-22" />
+        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[var(--primary)]/6 filter blur-3xl" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight" style={{fontFamily: "'Cormorant Garamond', serif"}}>
-              Timeless Elegance<br />
-              <span className="text-[#C9A55A]">Meets Modern Living</span>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-3 sm:mb-5 leading-tight hero-title" style={{fontFamily: "'Cormorant Garamond', serif"}}>
+              Timeless Elegance
+              <br />
+              <span className="text-[var(--primary)]">Meets Modern Living</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light">
-              We craft interiors that reflect your story and elevate your everyday moments.
+            <div className="mb-6">
+              <div className="section-sep" aria-hidden="true" />
+            </div>
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 sm:mb-10 max-w-2xl mx-auto font-light no-overflow">
+              We create elevated interiors with refined materials and crafted details that stand the test of time.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to={createPageUrl("Projects")}>
-                <Button className="bg-[#C9A55A] hover:bg-[#B89550] text-white px-8 py-6 text-lg">
+                <Button variant="lux" className="px-8 py-4 text-lg">
                   Explore Portfolio
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to={createPageUrl("Contact")}>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#2C2C2C] px-8 py-6 text-lg">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[var(--dark)] px-6 py-4 text-lg">
                   Start Your Project
                 </Button>
               </Link>
@@ -117,24 +123,24 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project) => (
               <div key={project.id}>
                 <Link to={createPageUrl("ProjectDetail") + `?id=${project.id}`}>
-                  <div className="group cursor-pointer">
-                    <div className="relative overflow-hidden rounded-lg aspect-[4/5] mb-4">
+                  <div className="group cursor-pointer glass-card p-3 sm:p-4 rounded-2xl project-elevate hover:shadow-xl transition-all duration-400">
+                    <div className="relative overflow-hidden rounded-md aspect-[4/5] mb-4 w-full">
                       <img
                         src={project.main_image}
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded-md"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md" />
                     </div>
-                    <p className="text-[#C9A55A] text-sm font-medium">{project.category}</p>
-                    <h3 className="text-2xl font-semibold text-[#2C2C2C] group-hover:text-[#C9A55A] transition-colors" style={{fontFamily: "'Cormorant Garamond', serif"}}>
+                    <p className="text-[var(--primary)] text-sm font-medium">{project.category}</p>
+                    <h3 className="text-2xl font-semibold text-[var(--dark)] group-hover:text-[var(--primary)] transition-colors" style={{fontFamily: "'Cormorant Garamond', serif"}}>
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 line-clamp-2">{project.subtitle}</p>
+                    <p className="text-[var(--muted)] line-clamp-2">{project.subtitle}</p>
                   </div>
                 </Link>
               </div>
