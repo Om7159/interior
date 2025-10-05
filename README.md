@@ -1,10 +1,14 @@
 # 🏠 Interio - Interior Design Studio
 
+## 🌐 Live Preview
+**🔗 [View Live Site](https://merry-boba-37d9fd.netlify.app/)** - Experience the beautiful interior design website
+
 [![Hacktoberfest 2025](https://img.shields.io/badge/Hacktoberfest-2025-orange.svg)](https://hacktoberfest.digitalocean.com/)
 [![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-4.5.0-646CFF.svg)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.5-38B2AC.svg)](https://tailwindcss.com/)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/37d9fd-merry-boba/deploy-status)](https://app.netlify.com/sites/merry-boba-37d9fd/deploys)
 
 > 🎃 **Participating in Hacktoberfest 2025!** Join us in building the most beautiful interior design website.
 
