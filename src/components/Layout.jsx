@@ -5,6 +5,7 @@ import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import logo from "@/assets/logo.svg";
+import wordmark from "@/assets/wordmark.svg";
 
 export default function Layout({ children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
@@ -51,7 +52,7 @@ export default function Layout({ children }) {
               className="text-7xl font-bold text-[var(--dark)] flex items-center gap-3"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              <img src={logo} alt="Interio Logo" className="h-20" />
+              <img src={logo} alt="Interio Logo" className="h-10" />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-8">
@@ -128,7 +129,7 @@ export default function Layout({ children }) {
                 className="text-3xl font-bold text-[#C9A55A] mb-4"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
-                Interio
+                <img src={wordmark} alt="Interio Wordmark" className="h-8" />
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Creating timeless spaces that reflect your unique style and
